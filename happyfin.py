@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 import requests
 from io import BytesIO
-import plotly.express as px
+#import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
