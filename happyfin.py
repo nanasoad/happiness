@@ -38,7 +38,7 @@ page=st.sidebar.radio("Go to", pages)
 if page == pages[0] : 
    
     st.title('World Happiness')
-    image = Image.open(r"C:\Users\diego\OneDrive\Documents\streamlit_presentacion\happy1.jpeg")
+    image = Image.open("happy1.jpeg")
     st.image(image)
     st.header("Introduction")
     st.write("Quality of life (QoL) is a topic of great relevance, especially for policymakers and those interested in the general well-being of the population. This concept can be approached from various perspectives and assessed in multiple ways. Over time, QoL measurement has evolved through different approaches, always aiming to assess the well-being of individuals, groups, or regions.")
@@ -46,7 +46,7 @@ if page == pages[0] :
     st.markdown(text)
     
     st.write("Given the complexity of assessing QoL, there is a need for data science tools capable of analyzing the massive and complex data required to study well-being in all its dimensions. Today, information-rich data sources, such as social media, are utilized in research to study happiness. Machine learning (ML) algorithms have made it possible to analyze large volumes of data, extract valuable insights, and open up new research possibilities in the field of QoL. These algorithms can be used both to analyze the results of QoL indicators and to predict well-being in future years or in new data samples from individuals and countries.")
-    image = Image.open(r"C:\Users\diego\OneDrive\Documents\streamlit_presentacion\Happiness_Test.png")
+    image = Image.open("Happiness_Test.png")
     st.image(image)
     st.subheader('Aim',divider='rainbow')
     st.write('In this context, we focus on the World Happiness Index, an international QoL indicator developed by the United Nations Sustainable Development Solutions Network. This work explores well-being prediction systems based on machine learning algorithms. To achieve this, we conducted a comparative study of the most widely used algorithms in the analysis of data from the World Happiness Report (WHR), with the aim of proposing a model capable of predicting the Ladder Score using machine learning techniques.')
@@ -146,7 +146,7 @@ if page == pages[1] :
     st.write("Box plots expose differences in distribution and the presence of outliers across a range of socioeconomic and health indicators, highlighting significant variations in variables such as GDP, social support, life expectancy, corruption, and medical services, with outliers underscoring disparities between countries. These graphical representations indicate varying distributions, some with significant skewness and outliers, suggesting the need for further data transformation and appropriate handling of outliers for statistical modeling./n")
 
     st.subheader("Relationship between the variables",divider='rainbow')
-    df_fin= pd.read_csv(r"C:\Users\diego\Downloads\df_Fin.csv",index_col=False,header=0,usecols=['Country', 'Region', 'Year', 'Ladder', 'Log GDP', 'Social Supp',
+    df_fin= pd.read_csv(df_Fin.csv,index_col=False,header=0,usecols=['Country', 'Region', 'Year', 'Ladder', 'Log GDP', 'Social Supp',
        'Life expectancy', 'Freedom', 'generosity', 'Corruption', 'Violence',
        'Rate Beds', 'Rate Medical', 'Rate Nursing', 'Rate Dentists',
        'poverty_gap', 'poverty_severity', 'gini'])
@@ -214,7 +214,7 @@ if page == pages[2] :
          "5. Gradient boosting regressor\n")
     st.write("Die Models were evaluated observing the following results:")
 
-    df_fin= pd.read_csv(r"C:\Users\diego\Downloads\df_Fin.csv",index_col=False,header=0,usecols=['Country', 'Region', 'Year', 'Ladder', 'Log GDP', 'Social Supp',
+    df_fin= pd.read_csv("df_Fin.csv",index_col=False,header=0,usecols=['Country', 'Region', 'Year', 'Ladder', 'Log GDP', 'Social Supp',
        'Life expectancy', 'Freedom', 'generosity', 'Corruption', 'Violence',
        'Rate Beds', 'Rate Medical', 'Rate Nursing', 'Rate Dentists',
        'poverty_gap', 'poverty_severity', 'gini'])
