@@ -1,6 +1,6 @@
 from optparse import OptionGroup
 import pprint
-from shap.plots.colors import blue_rgb
+#from shap.plots.colors import blue_rgb
 import streamlit as st
 import pandas as pd
 import numpy as np
