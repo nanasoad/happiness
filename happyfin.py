@@ -1,13 +1,13 @@
 from optparse import OptionGroup
 import pprint
-#from shap.plots.colors import blue_rgb
+from shap.plots.colors import blue_rgb
 import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
 import requests
 from io import BytesIO
-#import plotly.express as px
+import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
