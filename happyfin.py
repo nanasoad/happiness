@@ -38,7 +38,7 @@ page=st.sidebar.radio("Go to", pages)
 if page == pages[0] : 
    
     st.title('World Happiness')
-    image = Image.open(r"C:\Users\diego\OneDrive\Documents\streamlit_presentacion\Happy1.jpeg")
+    image = Image.open(r"C:\Users\diego\OneDrive\Documents\streamlit_presentacion\happy1.jpeg")
     st.image(image)
     st.header("Introduction")
     st.write("Quality of life (QoL) is a topic of great relevance, especially for policymakers and those interested in the general well-being of the population. This concept can be approached from various perspectives and assessed in multiple ways. Over time, QoL measurement has evolved through different approaches, always aiming to assess the well-being of individuals, groups, or regions.")
