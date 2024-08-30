@@ -146,7 +146,7 @@ if page == pages[1] :
     st.write("Box plots expose differences in distribution and the presence of outliers across a range of socioeconomic and health indicators, highlighting significant variations in variables such as GDP, social support, life expectancy, corruption, and medical services, with outliers underscoring disparities between countries. These graphical representations indicate varying distributions, some with significant skewness and outliers, suggesting the need for further data transformation and appropriate handling of outliers for statistical modeling./n")
 
     st.subheader("Relationship between the variables",divider='rainbow')
-    df_fin= pd.read_csv(df_Fin.csv,index_col=False,header=0,usecols=['Country', 'Region', 'Year', 'Ladder', 'Log GDP', 'Social Supp',
+    df_fin= pd.read_csv("df_Fin.csv",index_col=False,header=0,usecols=['Country', 'Region', 'Year', 'Ladder', 'Log GDP', 'Social Supp',
        'Life expectancy', 'Freedom', 'generosity', 'Corruption', 'Violence',
        'Rate Beds', 'Rate Medical', 'Rate Nursing', 'Rate Dentists',
        'poverty_gap', 'poverty_severity', 'gini'])
