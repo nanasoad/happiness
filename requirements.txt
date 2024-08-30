@@ -8,3 +8,5 @@ scikit_learn
 seaborn
 shap
 streamlit
+IPython
+statsmodels
