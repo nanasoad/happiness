@@ -1,5 +1,1 @@
-Pillow
-seaborn
 shap
-IPython
-statsmodels
