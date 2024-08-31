@@ -641,7 +641,7 @@ if page == pages[2] :
     image_shap1 = Image.open('shap1.png')
     st.image(image_shap1)
 
-    st.write('This SHAP chart provides a comprehensive view of how each feature influences the models output, facilitating a better understanding of the model's decision-making process. Each point on the chart represents an observation in the dataset. The position of a point along the X-axis (i.e., the SHAP value) shows the impact that the feature had on the model's output for that observation. The higher up a feature is on the chart, the more important it is to the model.')
+    st.write('This SHAP chart provides a comprehensive view of how each feature influences the models output, facilitating a better understanding of the models decision-making process. Each point on the chart represents an observation in the dataset. The position of a point along the X-axis (i.e., the SHAP value) shows the impact that the feature had on the model's output for that observation. The higher up a feature is on the chart, the more important it is to the model.')
     st.write('The results indicate that **Log GDP**,**Social Support**, and **Life Expectancy** play a crucial role in determining the outcomes. It is observed that high values of these variables tend to raise the predictions of a country's happiness index. In contrast, features related to healthcare (rate bed, rate nursing , rate medical, rate dentist) and poverty show minimal impact, suggesting that they are less critical in this model. Some features, such as the Gini coefficient, exhibit both positive and negative effects depending on their values, indicating more complex interactions in the model.)
     st.write('Looking at each feature in detail, one can highlight that:')
     
