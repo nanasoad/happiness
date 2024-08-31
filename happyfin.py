@@ -661,7 +661,17 @@ if page == pages[2] :
     st.write('The most influential features for the models prediction in this instance are the **Log GDP**, **Social Support**, and **Life Expectancy**, all of which increase the models output. Other features, such as corruption, freedom, and the Gini, also contribute positively, but their impact is less significant. The features at the bottom of the list have little to no impact on the prediction, indicating that they may not be as important to the outcome of this particular model. The remaining features have a minimal impact on the models outcome for this specific instance, and their cumulative effect is small compared to the top features, such as the Log GDP and Social Support.')
     st.write('The cumulative effect of all the features results in a high prediction value for this specific instance. The graph shows the models output value, which ranges from 4.0 to 7.5. The specific instance has a final predicted value of around 7.5, indicating that the combined effect of all the features tends to increase the prediction towards this higher value.')   
     st.write('')
-   
+
+    image_shap3 = Image.open('shap3.png')
+    st.image(image_shap3)
+
+    st.write('The SHAP interaction value graph visualizes the interaction effects between features in a machine learning model. Each point on the graph represents the SHAP interaction value between a pair of features. The most significant interactions are between **Log of GDP and Social Support**, **Social Support and Corruption**, and **Log of GDP and Life Expectancy**.')
+    st.write('**Log of GDP and Social Support:** The interaction between these two features is significant, with a mix of positive and negative interaction values, indicating that the effect of the log of GDP on the model outcome depends on the level of social support.')
+    st.write('**Social Support and Corruption:** There is a notable interaction between social support and corruption, suggesting that the effect of social support varies with the level of corruption.')
+    st.write('**Corruption and Life Expectancy:** This interaction also shows variability, suggesting that the relationship between corruption and life expectancy has a diverse impact on the model outcome.')
+    st.write('In many cases, high feature values (red dots) are associated with positive interaction effects, meaning that when both features have high values, they tend to boost the model prediction. However, for most feature pairs, SHAP interaction values cluster around zero, suggesting that the model predictions are based primarily on the individual effects of these features rather than their interactions.')
+    st.write('In contrast, features such as **Rate Beds**, **Violence**, and **Rate Nursing** show less significant interactions, as evidenced by the concentration of dots near zero, indicating that their interaction effects are relatively small.')
+    st.write('In conclusion, the graph highlights the importance of considering interactions between features, as they can significantly influence model predictions beyond individual effects. However, the model seems to rely more on the individual contributions of features than on complex interactions between them.')
     st.write('**Simple dependence plot**')
     #st.write('')
     
