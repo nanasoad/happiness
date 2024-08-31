@@ -577,17 +577,17 @@ if page == pages[2] :
     #random_accuracy = evaluate(best_random, X_test_R, y_test_R)
 
     #def evaluate(model, X_test_R, y_test_R):
-     #   predictions = model.predict(X_test_R)
-      #  errors = abs(predictions - y_test_R)
-       # mape = 100 * np.mean(errors / y_test_R)
-    #    p = RFR.score(X_test_R, y_test_R).round(2)
-     #   prueba=100*p
-      #  accuracy = 100 - mape
-    #    st.write('Model Performance', model)
-     #   st.write('Average Error: {:0.4f}.'.format(np.mean(errors)))
-      #  st.write('Accuracy = {:0.2f}%.'.format(accuracy))
-      #  st.write('prueba= {:0.2f}%.'.format(prueba))
-       # return accuracy, prueba
+    #  predictions = model.predict(X_test_R)
+    #  errors = abs(predictions - y_test_R)
+    #  mape = 100 * np.mean(errors / y_test_R)
+    #  p = RFR.score(X_test_R, y_test_R).round(2)
+    #  prueba=100*p
+    #  accuracy = 100 - mape
+    #  st.write('Model Performance', model)
+    #  st.write('Average Error: {:0.4f}.'.format(np.mean(errors)))
+    #  st.write('Accuracy = {:0.2f}%.'.format(accuracy))
+    #  st.write('prueba= {:0.2f}%.'.format(prueba))
+    # return accuracy, prueba
 
     #base_model = RandomForestRegressor(random_state = 42)
     #base_model.fit(X_train_R, y_train_R)
@@ -607,7 +607,7 @@ if page == pages[2] :
 
     st.write("In this section, we calculate SHAP values and visualize feature importance, feature dependence, force, and decision plot. SHAP values show how each feature affects each final prediction, the importance of each feature compared to others, and the model's dependence on the interaction between features.")
     
-    df_shap= pd.read_csv(r"C:\Users\diego\Downloads\df_Fin.csv",index_col=False,header=0,usecols=['Country', 'Region', 'Year', 'Ladder', 'Log GDP', 'Social Supp',
+    df_shap= pd.read_csv("df_Fin.csv",index_col=False,header=0,usecols=['Country', 'Region', 'Year', 'Ladder', 'Log GDP', 'Social Supp',
        'Life expectancy', 'Freedom', 'generosity', 'Corruption', 'Violence','Rate Beds', 'Rate Medical', 'Rate Nursing', 'Rate Dentists','poverty_gap', 'poverty_severity', 'gini'])
     
     X = df_shap.drop(['Country', 'Region', 'Year', 'Ladder'],axis=1) # explanatory variables
