@@ -317,8 +317,8 @@ if page == pages[2] :
     
 
     tabla = pd.DataFrame([
-            {"Set":"Training","Model": "Multiple Linear Model", "R^2":round(LR.score(X_train, y_train),2) , "Error - MAE":round(metrics.mean_absolute_error(y_train, y_pred_train_LR),2) ,'Error - MSE':round(metrics.mean_squared_error(y_train, y_pred_train_LR),2)},
-            {"Set":"Test","Model": "Multiple Linear Model", "R^2":round(LR.(score(X_test, y_test),2) , "Error - MAE":round(metrics.mean_absolute_error(y_test, y_pred_LR),2),'Error - MSE':round(metrics.mean_squared_error(y_test, y_pred_LR),2)},
+            {"Set":"Training","Model": "Multiple Linear Model", "R^2":round(LR.score(X_train, y_train),2), "Error - MAE":round(metrics.mean_absolute_error(y_train, y_pred_train_LR),2) ,'Error - MSE':round(metrics.mean_squared_error(y_train, y_pred_train_LR),2)},
+            {"Set":"Test","Model": "Multiple Linear Model", "R^2":round(LR.score(X_test, y_test),2), "Error - MAE":round(metrics.mean_absolute_error(y_test, y_pred_LR),2),'Error - MSE':round(metrics.mean_squared_error(y_test, y_pred_LR),2)},
             {"Set":"Training","Model": "KNeighbors Regressor Model", "R^2":round(KNN.score(X_train, y_train),2) , "Error - MAE":round(metrics.mean_absolute_error(y_train, y_pred_train_KNN),2) ,'Error - MSE':round(metrics.mean_squared_error(y_train, y_pred_train_KNN),2)},
             {"Set":"Test","Model": "KNeighbors Regressor Model", "R^2":round(KNN.score(X_test, y_test),2) , "Error - MAE":round(metrics.mean_absolute_error(y_test, y_pred_KNN),2) ,'Error - MSE':round(metrics.mean_squared_error(y_test, y_pred_KNN),2)},
             {"Set":"Training","Model": "Decision Tree Regressor", "R^2":round(DTR.score(X_train, y_train),2) , "Error - MAE":round(metrics.mean_absolute_error(y_train, y_pred_train_DTR),2) ,'Error - MSE':round(metrics.mean_squared_error(y_train, y_pred_train_DTR),2)},
