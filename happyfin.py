@@ -499,12 +499,12 @@ if page == pages[2] :
     
     st.write("*Model Performance (Initial Model):*", base_model)
     tabla_R = pd.DataFrame([
-            {"Set":"Training", r'''R^2''':base_model.score(X_train_R, y_train_R).round(2) , "Error - MAE":metrics.mean_absolute_error(y_train_R, y_pred_train_base).round(2) ,'Error - MSE':metrics.mean_squared_error(y_train_R, y_pred_train_base).round(2)},
-            {"Set":"Test", r'''R^2''':base_model.score(X_test_R, y_test_R).round(2) , "Error - MAE":metrics.mean_absolute_error(y_test_R, y_pred_base).round(2) ,'Error - MSE':metrics.mean_squared_error(y_test_R, y_pred_base).round(2)},
+            {"Set":"Training", r'''R^2''':round(base_model.score(X_train_R, y_train_R),2) , "Error - MAE":round(metrics.mean_absolute_error(y_train_R, y_pred_train_base),2) ,'Error - MSE':round(metrics.mean_squared_error(y_train_R, y_pred_train_base),2)},
+            {"Set":"Test", r'''R^2''':round(base_model.score(X_test_R, y_test_R),2) , "Error - MAE":round(metrics.mean_absolute_error(y_test_R, y_pred_base),2) ,'Error - MSE':round(metrics.mean_squared_error(y_test_R, y_pred_base),2)},
             ]) 
     edited_R = st.data_editor(tabla_R,hide_index=True)
 
-    #Accuracy_base=(1-metrics.mean_absolute_percentage_error(y_test, y_pred_base)).round(3)
+    #Accuracy_base=(1-round(metrics.mean_absolute_percentage_error(y_test, y_pred_base)),3)
     Accuracy_base=0.945
     st.write("Accuracy:", Accuracy_base)
 
