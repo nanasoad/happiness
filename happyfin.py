@@ -404,8 +404,8 @@ if page == pages[2] :
     
     st.write('*Reduced Model (4 most important variables*)')
     tabla_R = pd.DataFrame([
-            {"Set":"Training", '''R^2''':RFR.score(X_train_R, y_train_R).round(2) ,"MAPE*": metrics.mean_absolute_percentage_error(y_train_R, y_pred_train_RFR_R) ,"Error - MAE":metrics.mean_absolute_error(y_train_R, y_pred_train_RFR_R).round(2) ,'Error - MSE':metrics.mean_squared_error(y_train_R, y_pred_train_RFR_R).round(2)},
-            {"Set":"Test", '''R^2''':RFR.score(X_test_R, y_test_R).round(2) ,"MAPE*": metrics.mean_absolute_percentage_error(y_test_R, y_pred_RFR_R) ,"Error - MAE":metrics.mean_absolute_error(y_test_R, y_pred_RFR_R).round(2) ,'Error - MSE':metrics.mean_squared_error(y_test_R, y_pred_RFR_R).round(2)},
+            {"Set":"Training", '''R^2''':round(RFR.score(X_train_R, y_train_R),2) ,"MAPE*": round(metrics.mean_absolute_percentage_error(y_train_R, y_pred_train_RFR_R),2) ,"Error - MAE":round(metrics.mean_absolute_error(y_train_R, y_pred_train_RFR_R),2) ,'Error - MSE':round(metrics.mean_squared_error(y_train_R, y_pred_train_RFR_R),2)},
+            {"Set":"Test", '''R^2''':round(RFR.score(X_test_R, y_test_R),2) ,"MAPE*": round(metrics.mean_absolute_percentage_error(y_test_R, y_pred_RFR_R),2) ,"Error - MAE":round(metrics.mean_absolute_error(y_test_R, y_pred_RFR_R),2) ,'Error - MSE':round(metrics.mean_squared_error(y_test_R, y_pred_RFR_R),2)},
             ]) 
    
     edited_R = st.data_editor(tabla_R,hide_index=True)
