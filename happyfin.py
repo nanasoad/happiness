@@ -529,8 +529,8 @@ if page == pages[2] :
     
     st.write("*Model Performance (RandomizedSearch):*", best_random)
     tabla_R = pd.DataFrame([
-            {"Set":"Training", r'''R^2''':best_random.score(X_train_R, y_train_R).round(2) , "Error - MAE":metrics.mean_absolute_error(y_train_R, y_pred_train_best).round(2) ,'Error - MSE':metrics.mean_squared_error(y_train_R, y_pred_train_best).round(2)},
-            {"Set":"Test", r'''R^2''':best_random.score(X_test_R, y_test_R).round(2) , "Error - MAE":metrics.mean_absolute_error(y_test_R, y_pred_best).round(2) ,'Error - MSE':metrics.mean_squared_error(y_test_R, y_pred_best).round(2)},
+            {"Set":"Training", r'''R^2''':round(best_random.score(X_train_R, y_train_R),2) , "Error - MAE":round(metrics.mean_absolute_error(y_train_R, y_pred_train_best),2) ,'Error - MSE':round(metrics.mean_squared_error(y_train_R, y_pred_train_best),2)},
+            {"Set":"Test", r'''R^2''':round(best_random.score(X_test_R, y_test_R),2) , "Error - MAE":round(metrics.mean_absolute_error(y_test_R, y_pred_best),2) ,'Error - MSE':round(metrics.mean_squared_error(y_test_R, y_pred_best),2)},
             ]) 
     edited_R = st.data_editor(tabla_R,hide_index=True)
     
@@ -562,14 +562,14 @@ if page == pages[2] :
     
     st.write("*Model Performance (GridSearch):*", grid_model)
     tabla_grid = pd.DataFrame([
-            {"Set":"Training", r'''R^2''':grid_model.score(X_train_R, y_train_R).round(2) , "Error - MAE":metrics.mean_absolute_error(y_train_R, y_pred_train_grid).round(2) ,'Error - MSE':metrics.mean_squared_error(y_train_R, y_pred_train_grid).round(2)},
-            {"Set":"Test", r'''R^2''':base_model.score(X_test_R, y_test_R).round(2) , "Error - MAE":metrics.mean_absolute_error(y_test_R, y_pred_grid).round(2) ,'Error - MSE':metrics.mean_squared_error(y_test_R, y_pred_grid).round(2)},
+            {"Set":"Training", r'''R^2''':round(grid_model.score(X_train_R, y_train_R),2) , "Error - MAE":round(metrics.mean_absolute_error(y_train_R, y_pred_train_grid),2) ,'Error - MSE':round(metrics.mean_squared_error(y_train_R, y_pred_train_grid),2)},
+            {"Set":"Test", r'''R^2''':round(base_model.score(X_test_R, y_test_R),2) , "Error - MAE":round(metrics.mean_absolute_error(y_test_R, y_pred_grid),2) ,'Error - MSE':round(metrics.mean_squared_error(y_test_R, y_pred_grid),2)},
             ]) 
     edited_grid = st.data_editor(tabla_grid,hide_index=True)
     grid_accuracy=grid_model.score(X_test_R, y_test_R)
 
 
-    Accuracy_grid=(1-metrics.mean_absolute_percentage_error(y_test, y_pred_grid)).round(3)
+    Accuracy_grid=round((1-metrics.mean_absolute_percentage_error(y_test, y_pred_grid)),3)
     st.write("Accuracy:", Accuracy_grid)   
     #st.write("Accuracy:", grid_accuracy)
     st.write('Percentage of difference between the optimized model and the initial model **{:0.4f}%**:'.format( 100 * (Accuracy_grid - Accuracy_base) / Accuracy_base))
