@@ -641,10 +641,27 @@ if page == pages[2] :
     image_shap1 = Image.open('shap1.png')
     st.image(image_shap1)
 
-    st.write('For each feature, a point corresponds to an observation in the data set. The position of a point along the x-axis (i.e., the actual SHAP value) represents the impact that feature had on the model output for that observation. The higher the feature is placed on the plot, the more important it is to the model.')
-    st.write('The summary graph shows the importance of each feature in the model. The results show that “Log GPD”, “Social Supp” and “Life Expectancy”  play an important role in determining the results. It is seen how high values of these variables are directly proportional to a high happiness index in a country.')
+    st.write('This SHAP chart provides a comprehensive view of how each feature influences the model's output, facilitating a better understanding of the model's decision-making process. Each point on the chart represents an observation in the dataset. The position of a point along the X-axis (i.e., the SHAP value) shows the impact that the feature had on the model's output for that observation. The higher up a feature is on the chart, the more important it is to the model.')
+    st.write('The results indicate that **Log GDP**,**Social Support**, and **Life Expectancy** play a crucial role in determining the outcomes. It is observed that high values of these variables tend to raise the predictions of a country's happiness index. In contrast, features related to healthcare (rate bed, rate nursing , rate medical, rate dentist) and poverty show minimal impact, suggesting that they are less critical in this model. Some features, such as the Gini coefficient, exhibit both positive and negative effects depending on their values, indicating more complex interactions in the model.)
+    st.write('Looking at each feature in detail, one can highlight that:')
+    
+    st.write('**Log GDP**: This feature has a large dispersion in its SHAP values, suggesting a significant impact on the model's predictions. Higher GDP (represented by pink/red dots) generally drives the prediction upwards, as evidenced by the cluster of red dots on the positive side of the X-axis. In contrast, lower GDP values (blue dots) are more dispersed around zero or on the negative side, suggesting a neutral or reducing effect on the index outcome.')
+    st.write('**Social Support** and **Life Expectancy**: These features also show considerable dispersion, indicating a strong influence on the model's predictions. Higher values (in red) tend to increase the model's outcome, while lower values (in blue) reduce it or have a neutral effect.')
+    st.write('**Gini Coefficient (Gini)**: This measure of income inequality appears to have a more complex relationship with the outcome. There is a mix of red and blue on both sides of the X-axis, suggesting that its impact can be both positive and negative, depending on other factors.')
+    st.write('**Freedom** and **Corruption**: These features show less dispersion but still have visible patterns. For example, greater freedom (red dots) seems to contribute positively, while greater corruption (red dots) generally has a negative impact, which is consistent with intuitive expectations.')
+    st.write('**Poverty Gap**: This feature has SHAP values close to zero, indicating that its effect on the model's outcome is minimal in most cases.')
+    st.write('**Healthcare-related features (bed rate, nursing rate, medical care rate, dentist rate)**: These features show a relatively narrow dispersion of SHAP values around zero, indicating that they do not have a significant impact on model predictions compared to other features.')
 
     st.write('')
+    
+    image_shap2 = Image.open('shap2.png')
+    st.image(image_shap2)
+    
+    st.write('**The SHAP force diagram** visualizes how each feature contributes to the final prediction of the model for a specific instance.')
+    st.write('The most influential features for the model's prediction in this instance are the **Log GDP**, **Social Support**, and **Life Expectancy**, all of which increase the model's output. Other features, such as corruption, freedom, and the Gini, also contribute positively, but their impact is less significant. The features at the bottom of the list have little to no impact on the prediction, indicating that they may not be as important to the outcome of this particular model. The remaining features have a minimal impact on the model's outcome for this specific instance, and their cumulative effect is small compared to the top features, such as the Log GDP and Social Support.')
+    st.write('The cumulative effect of all the features results in a high prediction value for this specific instance. The graph shows the model's output value, which ranges from 4.0 to 7.5. The specific instance has a final predicted value of around 7.5, indicating that the combined effect of all the features tends to increase the prediction towards this higher value.')   
+    st.write('')
+   
     st.write('**Simple dependence plot**')
     #st.write('')
     
