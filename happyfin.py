@@ -678,17 +678,17 @@ if page == pages[2] :
     #choice_ = ['Log GDP', 'Gini','Social Supp','Life Expectancy']
     #option = st.selectbox('Choice of the model', choice_)
     
-    st.write('*Log GDP - Freedom to make life choices*')
-    image_shap2 = Image.open('LogGDP.png')
-    st.image(image_shap2)
+    #st.write('*Log GDP - Freedom to make life choices*')
+    #image_shap2 = Image.open('LogGDP.png')
+    #st.image(image_shap2)
     
     #st.write("*Gini*")
     #image_shap3 = Image.open('gini.png')
     #st.image(image_shap3)
     
-    st.write("*Social Supp - Income based on GDP per capita*")
-    image_shap4 = Image.open('social.png')
-    st.image(image_shap4)
+    #st.write("*Social Supp - Income based on GDP per capita*")
+    #image_shap4 = Image.open('social.png')
+    #st.image(image_shap4)
     
     #st.write("*Life Expectancy*")
     #image_shap5 = Image.open('Life.png')
