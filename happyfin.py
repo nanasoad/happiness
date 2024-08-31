@@ -654,7 +654,7 @@ if page == pages[2] :
 
     st.write('')
     
-    image_shap2 = Image.open('shap2.png')
+    image_shap2 = Image.open('Shap2.png')
     st.image(image_shap2)
     
     st.write('**The SHAP force diagram** visualizes how each feature contributes to the final prediction of the model for a specific instance.')
